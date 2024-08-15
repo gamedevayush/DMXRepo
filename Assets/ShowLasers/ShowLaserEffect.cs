@@ -57,6 +57,7 @@ namespace sourcenity {
         [DependsOn("type", ScLaserEffectType.Cone)]
         [Tooltip("For cones only: Controls the radius of the target circle")]
         public float radius = 0.5f;
+        public float cutout = 0.5f;
 
         [Tooltip("Main (center) color. May include transparency.")]
         public Color mainColor = Color.red;
@@ -431,7 +432,7 @@ namespace sourcenity {
                     }
 
                 case ScLaserEffectType.Cone: {
-                        return GenerateCone(startPosition, startPosition + width, radius, length);
+                        return GenerateCone(startPosition, startPosition + width, radius, length, cutout);
                     }
             }
 
@@ -613,14 +614,14 @@ namespace sourcenity {
             return mesh;
         }
 
-        private Mesh GenerateCone(float fromAngle, float toAngle, float outerRadius, float beamLength) {
-
+        private Mesh GenerateCone(float fromAngle, float toAngle, float outerRadius, float beamLength, float cut)
+        {
             float fullAngle = toAngle - fromAngle;
 
             // Adjust by fill
             fullAngle *= fill;
 
-            int sideFaces = Mathf.Max(1, (int) Mathf.Abs(MAX_FACES * (fullAngle / 360)));
+            int sideFaces = Mathf.Max(1, (int)Mathf.Abs(MAX_FACES * (fullAngle / 360)));
             int sideFaceVertices = sideFaces + 1;
 
             int vertAmount = sideFaceVertices * 4; // front and back, inner and outer
@@ -629,67 +630,90 @@ namespace sourcenity {
             Vector3[] normals = new Vector3[vertAmount];
             Vector2[] uv = new Vector2[vertAmount];
             Vector2[] uv2 = new Vector2[vertAmount];
-            int[] tris = new int[vertAmount * 3];
+            int[] tris = new int[sideFaces * 12];
 
-            // Generate verts at start position (multiple ones, for correct normals)
-            for (int i = 0; i < sideFaceVertices; i++) {
-                vertices[i] = vertices[i + sideFaceVertices * 2] + new Vector3(0, 0, 0);
+            // Generate verts at start position
+            for (int i = 0; i < sideFaceVertices; i++)
+            {
+                float currentAngle = fromAngle + ((i / (float)sideFaces) * fullAngle);
+                float theta = currentAngle * Mathf.PI / 180; // convert to radians
+
+                float x = cut * Mathf.Cos(theta);
+                float y = cut * Mathf.Sin(theta);
+
+                vertices[i] = new Vector3(x, y, 0);
+                vertices[i + sideFaceVertices * 2] = new Vector3(x, y, 0);
                 normals[i] =
-                    Vector3.up; // TODO isn't this WRONG? Shouldn't the normal be into the direction of the opening cone?
+                   Vector3.up; // TODO isn't this WRONG? Shouldn't the normal be into the direction of the opening cone?
                 normals[i + sideFaceVertices * 2] = Vector3.down;
 
                 uv[i] = uv[i + sideFaceVertices * 2] = new Vector2(0, 0);
                 uv2[i] = uv2[i + sideFaceVertices * 2] = new Vector2(0, 1);
             }
 
-            // Generate verts at end position, from left to right as seen from above
-            for (int i = 0; i < sideFaceVertices; i++) {
+            // Generate verts at end position
+            for (int i = 0; i < sideFaceVertices; i++)
+            {
                 int index = i + sideFaceVertices;
-                float currentAngle = fromAngle + ((i / (float) sideFaces) * fullAngle);
+                float currentAngle = fromAngle + ((i / (float)sideFaces) * fullAngle);
                 float theta = currentAngle * Mathf.PI / 180; // convert to radians
 
                 float x = outerRadius * Mathf.Cos(theta);
                 float y = outerRadius * Mathf.Sin(theta);
-                vertices[index] = vertices[index + sideFaceVertices * 2] = new Vector3(x, y, beamLength);
 
-                normals[index] = Vector3.up;
-                normals[index + sideFaceVertices * 2] = Vector3.down;
+                vertices[index] = new Vector3(x, y, beamLength);
+                vertices[index + sideFaceVertices * 2] = new Vector3(x, y, beamLength);
 
-                float uvX = (currentAngle - fromAngle) / fullAngle;
+                normals[index] = Vector3.forward; // Normal pointing along the cone axis
+                normals[index + sideFaceVertices * 2] = Vector3.forward;
 
-                uv[index] = uv[index + sideFaceVertices * 2] = new Vector2(x, y);
-                uv2[index] = uv2[index + sideFaceVertices * 2] = new Vector2(uvX, 0);
+                uv[index] = new Vector2(i / (float)sideFaces, 0);
+                uv[index + sideFaceVertices * 2] = new Vector2(i / (float)sideFaces, 1);
             }
 
             // Triangles facing upwards: First and second quarter of vertices
-            // i.e. 0-3-2 for the above example
             int tri = 0;
-            for (int i = 0; i < sideFaceVertices - 1; i++) {
+            for (int i = 0; i < sideFaceVertices - 1; i++)
+            {
                 tris[tri] = i;
+                tris[tri + 1] = i + sideFaceVertices;
+                tris[tri + 2] = i + sideFaceVertices + 1;
+                tri += 3;
+
+                tris[tri] = i;
+                tris[tri + 1] = i + sideFaceVertices + 1;
+                tris[tri + 2] = i + 1;
+                tri += 3;
+            }
+
+            // Triangles facing downwards: Third and fourth quarter of vertices
+            for (int i = sideFaceVertices * 2; i < (sideFaceVertices * 3) - 1; i++)
+            {
+                tris[tri] = i;
+                tris[tri + 1] = i + 1;
+                tris[tri + 2] = i + sideFaceVertices;
+                tri += 3;
+
+                tris[tri] = i + 1;
                 tris[tri + 1] = i + sideFaceVertices + 1;
                 tris[tri + 2] = i + sideFaceVertices;
                 tri += 3;
             }
 
-            for (int i = sideFaceVertices * 2; i < (sideFaceVertices * 3) - 1; i++) {
-                tris[tri] = i;
-                tris[tri + 1] = i + sideFaceVertices;
-                tris[tri + 2] = i + sideFaceVertices + 1;
-                tri += 3;
-            }
-
-            Mesh mesh = new Mesh {
+            Mesh mesh = new Mesh
+            {
                 name = "Laser Cone",
                 vertices = vertices,
                 triangles = tris,
                 normals = normals,
                 uv = uv,
-                uv2 = uv2
+                 uv2 = uv2
             };
 
             mesh.RecalculateBounds();
             return mesh;
         }
+
 
 
         /** Methods for determining changes **/
@@ -701,6 +725,7 @@ namespace sourcenity {
             public float width;
             public float length;
             public float radius;
+            public float cutout;
             public Color mainColor;
             public float fill;
             public int numberOfElements;
@@ -728,6 +753,7 @@ namespace sourcenity {
             clone.width = width;
             clone.length = length;
             clone.radius = radius;
+            clone.cutout = cutout;
             clone.numberOfElements = numberOfSegments;
             clone.fill = fill;
             clone.gapBetweenElements = gapBetweenSegments;
@@ -754,7 +780,7 @@ namespace sourcenity {
                     shadow.alignment != alignment ||
                     shadow.width != width ||
                     shadow.length != length ||
-                    shadow.radius != radius ||
+                    shadow.radius != radius || shadow.cutout!=cutout ||
                     shadow.numberOfElements != numberOfSegments ||
                     shadow.fill != fill ||
                     shadow.gapBetweenElements != gapBetweenSegments);
