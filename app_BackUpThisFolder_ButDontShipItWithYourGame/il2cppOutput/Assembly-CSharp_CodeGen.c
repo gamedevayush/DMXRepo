@@ -366,171 +366,181 @@ extern void updateMyColor_Start_m797DD0721C8486B824F31096F5828A4D2EFB849B (void)
 extern void updateMyColor_Update_mFC9439A0565A5C20065E9F4E08C19C1D47A8EAFB (void);
 // 0x000000B1 System.Void updateMyColor::.ctor()
 extern void updateMyColor__ctor_m522CE08644DB506E2884309DB0FED9B7906C25A5 (void);
-// 0x000000B2 System.Void sourcenity.ShowLaserEffect::Start()
+// 0x000000B2 System.Void XRCameraMovement::Start()
+extern void XRCameraMovement_Start_m90314ED840E01247009A1681A70B35CB2EE8AC5E (void);
+// 0x000000B3 System.Void XRCameraMovement::Update()
+extern void XRCameraMovement_Update_mB25912D8E0290F894CEAA0B9D4D043B5B53FEE5C (void);
+// 0x000000B4 System.Void XRCameraMovement::MovePlayer()
+extern void XRCameraMovement_MovePlayer_mF7BA71336704A66D6052C2C2C99263319C1C31CD (void);
+// 0x000000B5 System.Void XRCameraMovement::RotatePlayer()
+extern void XRCameraMovement_RotatePlayer_m7243F97A19CC5AF624AAC6BDF3415924A0765922 (void);
+// 0x000000B6 System.Void XRCameraMovement::.ctor()
+extern void XRCameraMovement__ctor_mE0B34D3682A374C307BE18C064EBBEE62A7E8B40 (void);
+// 0x000000B7 System.Void sourcenity.ShowLaserEffect::Start()
 extern void ShowLaserEffect_Start_m11317C3E306D136D31D6BA77950A31CFAE225504 (void);
-// 0x000000B3 System.Void sourcenity.ShowLaserEffect::OnValidate()
+// 0x000000B8 System.Void sourcenity.ShowLaserEffect::OnValidate()
 extern void ShowLaserEffect_OnValidate_m33B5C38385A432EC68245D09014FF661E0F5FE79 (void);
-// 0x000000B4 System.Void sourcenity.ShowLaserEffect::Update()
+// 0x000000B9 System.Void sourcenity.ShowLaserEffect::Update()
 extern void ShowLaserEffect_Update_mF1D7E037F8186DF935F8F3A642788ED4062CCB92 (void);
-// 0x000000B5 System.Void sourcenity.ShowLaserEffect::RefreshMesh()
+// 0x000000BA System.Void sourcenity.ShowLaserEffect::RefreshMesh()
 extern void ShowLaserEffect_RefreshMesh_mFE47F84F0482FD722185C6B7CC95364E9BE292DE (void);
-// 0x000000B6 System.Void sourcenity.ShowLaserEffect::RefreshMaterial()
+// 0x000000BB System.Void sourcenity.ShowLaserEffect::RefreshMaterial()
 extern void ShowLaserEffect_RefreshMaterial_m7024E78646C45B53D4E0A68388FCCCED372EF296 (void);
-// 0x000000B7 System.Void sourcenity.ShowLaserEffect::ApplyMeshAndMaterialToGameObject()
+// 0x000000BC System.Void sourcenity.ShowLaserEffect::ApplyMeshAndMaterialToGameObject()
 extern void ShowLaserEffect_ApplyMeshAndMaterialToGameObject_mC6DA7AF2007683530FF8F32BFD762825CC0629C1 (void);
-// 0x000000B8 System.Single sourcenity.ShowLaserEffect::GetStartForEffect()
+// 0x000000BD System.Single sourcenity.ShowLaserEffect::GetStartForEffect()
 extern void ShowLaserEffect_GetStartForEffect_m2C1C3500846138722B89435B8B40F322F666578E (void);
-// 0x000000B9 System.Single sourcenity.ShowLaserEffect::GetWidthPerElement()
+// 0x000000BE System.Single sourcenity.ShowLaserEffect::GetWidthPerElement()
 extern void ShowLaserEffect_GetWidthPerElement_m658DB6C06E547697D26C8F5B2160D2C55F63B89A (void);
-// 0x000000BA System.Single sourcenity.ShowLaserEffect::GetFullWidth()
+// 0x000000BF System.Single sourcenity.ShowLaserEffect::GetFullWidth()
 extern void ShowLaserEffect_GetFullWidth_mC4665BA2148E24318EB94D08E7206E0B07FA18A7 (void);
-// 0x000000BB UnityEngine.Mesh sourcenity.ShowLaserEffect::GenerateElement(System.Single)
+// 0x000000C0 UnityEngine.Mesh sourcenity.ShowLaserEffect::GenerateElement(System.Single)
 extern void ShowLaserEffect_GenerateElement_m37BED5F33538BF1C04A91828C82B79D5577454CD (void);
-// 0x000000BC UnityEngine.Mesh sourcenity.ShowLaserEffect::GenerateRectangle(System.Single,System.Single,System.Single)
+// 0x000000C1 UnityEngine.Mesh sourcenity.ShowLaserEffect::GenerateRectangle(System.Single,System.Single,System.Single)
 extern void ShowLaserEffect_GenerateRectangle_m3D5576C4FF23BBE83F3C07673DC2E68D613504C9 (void);
-// 0x000000BD UnityEngine.Mesh sourcenity.ShowLaserEffect::GenerateArc(System.Single,System.Single,System.Single)
+// 0x000000C2 UnityEngine.Mesh sourcenity.ShowLaserEffect::GenerateArc(System.Single,System.Single,System.Single)
 extern void ShowLaserEffect_GenerateArc_m5F19C3EF5E67A7CF4D0CAA73E767842A039FF8E3 (void);
-// 0x000000BE UnityEngine.Mesh sourcenity.ShowLaserEffect::GenerateCone(System.Single,System.Single,System.Single,System.Single,System.Single)
+// 0x000000C3 UnityEngine.Mesh sourcenity.ShowLaserEffect::GenerateCone(System.Single,System.Single,System.Single,System.Single,System.Single)
 extern void ShowLaserEffect_GenerateCone_m23EF129B7C79F23B9367565734619B7F7F48CB36 (void);
-// 0x000000BF sourcenity.ShowLaserEffect/Shadow sourcenity.ShowLaserEffect::CloneValues()
+// 0x000000C4 sourcenity.ShowLaserEffect/Shadow sourcenity.ShowLaserEffect::CloneValues()
 extern void ShowLaserEffect_CloneValues_mEBF4800FCAB7D84E1FB33B681981F3D1E53F70DE (void);
-// 0x000000C0 System.Boolean sourcenity.ShowLaserEffect::IsMeshBasedValuesChanged()
+// 0x000000C5 System.Boolean sourcenity.ShowLaserEffect::IsMeshBasedValuesChanged()
 extern void ShowLaserEffect_IsMeshBasedValuesChanged_m4EB56A21E13A6A2019469D6F8BD48D4021D89E32 (void);
-// 0x000000C1 System.Boolean sourcenity.ShowLaserEffect::IsMaterialRelevantValuesChanged()
+// 0x000000C6 System.Boolean sourcenity.ShowLaserEffect::IsMaterialRelevantValuesChanged()
 extern void ShowLaserEffect_IsMaterialRelevantValuesChanged_m7E74DADABE53E8C78E62CEFD10E075C34B07AB34 (void);
-// 0x000000C2 System.Void sourcenity.ShowLaserEffect::.ctor()
+// 0x000000C7 System.Void sourcenity.ShowLaserEffect::.ctor()
 extern void ShowLaserEffect__ctor_mCDCB39450BDD085A1FDEE785377873BA16F97DF8 (void);
-// 0x000000C3 System.Void sourcenity.ShowLaserEffect/Shadow::.ctor()
+// 0x000000C8 System.Void sourcenity.ShowLaserEffect/Shadow::.ctor()
 extern void Shadow__ctor_m2BD047EDE0AFC97D7AC98D6EDD98EF186C468823 (void);
-// 0x000000C4 System.Void Lux_SRP_GrassDisplacement.RotateAndMove::OnEnable()
+// 0x000000C9 System.Void Lux_SRP_GrassDisplacement.RotateAndMove::OnEnable()
 extern void RotateAndMove_OnEnable_mAA4040E3E8B9B6241B96DAC3DF24536B7C6E5D5F (void);
-// 0x000000C5 System.Void Lux_SRP_GrassDisplacement.RotateAndMove::Update()
+// 0x000000CA System.Void Lux_SRP_GrassDisplacement.RotateAndMove::Update()
 extern void RotateAndMove_Update_m2DF28B3CE09E44700782E2EB86E11815EF4FD04D (void);
-// 0x000000C6 System.Void Lux_SRP_GrassDisplacement.RotateAndMove::.ctor()
+// 0x000000CB System.Void Lux_SRP_GrassDisplacement.RotateAndMove::.ctor()
 extern void RotateAndMove__ctor_m9F83670D0A87C6D0B9B1882FEB3A4B5D5471DC3E (void);
-// 0x000000C7 System.Void Lux_SRP_GrassDisplacement.SmoothFollow::Update()
+// 0x000000CC System.Void Lux_SRP_GrassDisplacement.SmoothFollow::Update()
 extern void SmoothFollow_Update_m0DB608C8FC0C3B8A5BCF020E5F295EBE470571D7 (void);
-// 0x000000C8 System.Void Lux_SRP_GrassDisplacement.SmoothFollow::.ctor()
+// 0x000000CD System.Void Lux_SRP_GrassDisplacement.SmoothFollow::.ctor()
 extern void SmoothFollow__ctor_m9AF3C17D02945B37A4D5522CE7882950C0745ED3 (void);
-// 0x000000C9 System.Void Lux_SRP_GrassDisplacement.ControlDisplacer::OnEnable()
+// 0x000000CE System.Void Lux_SRP_GrassDisplacement.ControlDisplacer::OnEnable()
 extern void ControlDisplacer_OnEnable_mE276429605DECFF1DC0013332B3AA44D1EEF8B5C (void);
-// 0x000000CA System.Void Lux_SRP_GrassDisplacement.ControlDisplacer::OnDisable()
+// 0x000000CF System.Void Lux_SRP_GrassDisplacement.ControlDisplacer::OnDisable()
 extern void ControlDisplacer_OnDisable_m7644D8EBF821641C8C3E9F63FAE4BAA28CCC3AE1 (void);
-// 0x000000CB System.Void Lux_SRP_GrassDisplacement.ControlDisplacer::Update()
+// 0x000000D0 System.Void Lux_SRP_GrassDisplacement.ControlDisplacer::Update()
 extern void ControlDisplacer_Update_m007047E7295EC4C1B7D86F965B2BD2637B8C9D82 (void);
-// 0x000000CC System.Void Lux_SRP_GrassDisplacement.ControlDisplacer::.ctor()
+// 0x000000D1 System.Void Lux_SRP_GrassDisplacement.ControlDisplacer::.ctor()
 extern void ControlDisplacer__ctor_mC8E25B2BBBC33893A55D82C65575EC9804EB4A04 (void);
-// 0x000000CD System.Void Lux_SRP_GrassDisplacement.ControlDisplacerParticleSys::OnEnable()
+// 0x000000D2 System.Void Lux_SRP_GrassDisplacement.ControlDisplacerParticleSys::OnEnable()
 extern void ControlDisplacerParticleSys_OnEnable_m8816E5D281190878AF41D76E4556BAE07A672DD8 (void);
-// 0x000000CE System.Void Lux_SRP_GrassDisplacement.ControlDisplacerParticleSys::Update()
+// 0x000000D3 System.Void Lux_SRP_GrassDisplacement.ControlDisplacerParticleSys::Update()
 extern void ControlDisplacerParticleSys_Update_mA8C2C16ACA4D5F48A84CA1021D5E2E2055A1BE46 (void);
-// 0x000000CF System.Void Lux_SRP_GrassDisplacement.ControlDisplacerParticleSys::.ctor()
+// 0x000000D4 System.Void Lux_SRP_GrassDisplacement.ControlDisplacerParticleSys::.ctor()
 extern void ControlDisplacerParticleSys__ctor_mA5A2DFB2DB4450CE6546D860FFC10931BB9B540F (void);
-// 0x000000D0 System.Void Lux_SRP_GrassDisplacement.DebugGrassDisplacementTex::.ctor()
+// 0x000000D5 System.Void Lux_SRP_GrassDisplacement.DebugGrassDisplacementTex::.ctor()
 extern void DebugGrassDisplacementTex__ctor_mC12082B621D09158F3EC81FD4A7456D9037ACC2B (void);
-// 0x000000D1 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementRenderFeature::Create()
+// 0x000000D6 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementRenderFeature::Create()
 extern void GrassDisplacementRenderFeature_Create_mB46FAFFDB44DCC107AEA00A2468FF7CF80A87BF1 (void);
-// 0x000000D2 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementRenderFeature::AddRenderPasses(UnityEngine.Rendering.Universal.ScriptableRenderer,UnityEngine.Rendering.Universal.RenderingData&)
+// 0x000000D7 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementRenderFeature::AddRenderPasses(UnityEngine.Rendering.Universal.ScriptableRenderer,UnityEngine.Rendering.Universal.RenderingData&)
 extern void GrassDisplacementRenderFeature_AddRenderPasses_mF0C3A51DA7DD30A685888AB32E081B7C5379C652 (void);
-// 0x000000D3 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementRenderFeature::.ctor()
+// 0x000000D8 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementRenderFeature::.ctor()
 extern void GrassDisplacementRenderFeature__ctor_m8B698838532ABFA13BA47EAC76158369325E3992 (void);
-// 0x000000D4 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementRenderFeature/GrassDisplacementSettings::.ctor()
+// 0x000000D9 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementRenderFeature/GrassDisplacementSettings::.ctor()
 extern void GrassDisplacementSettings__ctor_m928DF653EA90EFE29D5D83844F626067D62CDEB6 (void);
-// 0x000000D5 UnityEngine.Rendering.FilteringSettings Lux_SRP_GrassDisplacement.GrassDisplacementPass::get_transparentFilterSettings()
+// 0x000000DA UnityEngine.Rendering.FilteringSettings Lux_SRP_GrassDisplacement.GrassDisplacementPass::get_transparentFilterSettings()
 extern void GrassDisplacementPass_get_transparentFilterSettings_mE9B0924944B311763D9678D3DE5C1DB433F1616C (void);
-// 0x000000D6 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::set_transparentFilterSettings(UnityEngine.Rendering.FilteringSettings)
+// 0x000000DB System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::set_transparentFilterSettings(UnityEngine.Rendering.FilteringSettings)
 extern void GrassDisplacementPass_set_transparentFilterSettings_mCE220C1820FBD27FFD08BB7C66154B0503C409B1 (void);
-// 0x000000D7 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::.ctor()
+// 0x000000DC System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::.ctor()
 extern void GrassDisplacementPass__ctor_m97F208BA3AD53A99B2C015CFEE9201E65DBCDF93 (void);
-// 0x000000D8 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::Configure(UnityEngine.Rendering.CommandBuffer,UnityEngine.RenderTextureDescriptor)
+// 0x000000DD System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::Configure(UnityEngine.Rendering.CommandBuffer,UnityEngine.RenderTextureDescriptor)
 extern void GrassDisplacementPass_Configure_m5DAED0FC2F1CB1636D2C08E8184921C77A9E3401 (void);
-// 0x000000D9 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::Execute(UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&)
+// 0x000000DE System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::Execute(UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&)
 extern void GrassDisplacementPass_Execute_mDC1BC8B03F220EBC2415C9FFB3B9396BFD5796E8 (void);
-// 0x000000DA System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::OnCameraCleanup(UnityEngine.Rendering.CommandBuffer)
+// 0x000000DF System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::OnCameraCleanup(UnityEngine.Rendering.CommandBuffer)
 extern void GrassDisplacementPass_OnCameraCleanup_m1E8BB626BA5BD4FDB0BAEBEF87F6A376918D9B13 (void);
-// 0x000000DB System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::.cctor()
+// 0x000000E0 System.Void Lux_SRP_GrassDisplacement.GrassDisplacementPass::.cctor()
 extern void GrassDisplacementPass__cctor_mD7C5960639D52A73F541D40345A7B1D27D400AB1 (void);
-// 0x000000DC System.Void Lux_SRP_GrassDisplacement.LayerAttribute::.ctor()
+// 0x000000E1 System.Void Lux_SRP_GrassDisplacement.LayerAttribute::.ctor()
 extern void LayerAttribute__ctor_mB46F4DEF2E6DE7632A4AC4A052195E5270C9E83B (void);
-// 0x000000DD System.Void LuxURPEssentials.DecalManager::OnValidate()
+// 0x000000E2 System.Void LuxURPEssentials.DecalManager::OnValidate()
 extern void DecalManager_OnValidate_mBE7A47F58A3C4E747DC37A22B581EBC8198E7C54 (void);
-// 0x000000DE System.Void LuxURPEssentials.DecalManager::.ctor()
+// 0x000000E3 System.Void LuxURPEssentials.DecalManager::.ctor()
 extern void DecalManager__ctor_m40EF54518008347AE531C62184442561087CD326 (void);
-// 0x000000DF System.Void LuxURPEssentials.DecalManager::.cctor()
+// 0x000000E4 System.Void LuxURPEssentials.DecalManager::.cctor()
 extern void DecalManager__cctor_mB2FC3C591D0189C00763F48BB95A51188B688D57 (void);
-// 0x000000E0 System.Void LuxURPEssentials.LuxURP_BillboardBounds::Start()
+// 0x000000E5 System.Void LuxURPEssentials.LuxURP_BillboardBounds::Start()
 extern void LuxURP_BillboardBounds_Start_m377127E63CB3C6D7E15999D1A01AC480DA8FF635 (void);
-// 0x000000E1 System.Void LuxURPEssentials.LuxURP_BillboardBounds::SetBounds()
+// 0x000000E6 System.Void LuxURPEssentials.LuxURP_BillboardBounds::SetBounds()
 extern void LuxURP_BillboardBounds_SetBounds_m1A6A23A50EA1465ECD81FD6494C9417DBC8A2208 (void);
-// 0x000000E2 System.Void LuxURPEssentials.LuxURP_BillboardBounds::OnDrawGizmosSelected()
+// 0x000000E7 System.Void LuxURPEssentials.LuxURP_BillboardBounds::OnDrawGizmosSelected()
 extern void LuxURP_BillboardBounds_OnDrawGizmosSelected_m22BBF170E87C95CCC65A62BB0323C1328ADA0ECE (void);
-// 0x000000E3 System.Void LuxURPEssentials.LuxURP_BillboardBounds::.ctor()
+// 0x000000E8 System.Void LuxURPEssentials.LuxURP_BillboardBounds::.ctor()
 extern void LuxURP_BillboardBounds__ctor_m43CBD5B783987BFEE666B8EDDEFB331DF99AA595 (void);
-// 0x000000E4 System.Void LuxURPEssentials.LuxURP_HelpBtn::.ctor(System.String)
+// 0x000000E9 System.Void LuxURPEssentials.LuxURP_HelpBtn::.ctor(System.String)
 extern void LuxURP_HelpBtn__ctor_m62C1CC1D9E5F58DE13F0061B9796FF26B8087AAC (void);
-// 0x000000E5 System.Int32 LuxURPEssentials.LuxURP_LayerBasedCulling::GetLayerNumber(System.Int32)
+// 0x000000EA System.Int32 LuxURPEssentials.LuxURP_LayerBasedCulling::GetLayerNumber(System.Int32)
 extern void LuxURP_LayerBasedCulling_GetLayerNumber_m535C281D6A4A231704C9515D6EF75CF864653969 (void);
-// 0x000000E6 System.Void LuxURPEssentials.LuxURP_LayerBasedCulling::OnEnable()
+// 0x000000EB System.Void LuxURPEssentials.LuxURP_LayerBasedCulling::OnEnable()
 extern void LuxURP_LayerBasedCulling_OnEnable_m70B0FAA7BBC2580E6374DB462C5EE889ED7533F9 (void);
-// 0x000000E7 System.Void LuxURPEssentials.LuxURP_LayerBasedCulling::.ctor()
+// 0x000000EC System.Void LuxURPEssentials.LuxURP_LayerBasedCulling::.ctor()
 extern void LuxURP_LayerBasedCulling__ctor_mB682AD0154829A9E4191A795C053B2BB5EADD146 (void);
-// 0x000000E8 System.Void LuxURPEssentials.LuxURP_SetupGlobals::SetupGlobals()
+// 0x000000ED System.Void LuxURPEssentials.LuxURP_SetupGlobals::SetupGlobals()
 extern void LuxURP_SetupGlobals_SetupGlobals_m17E39D11321C2B0DD21AFB5F7A90883C43EF25ED (void);
-// 0x000000E9 System.Void LuxURPEssentials.LuxURP_SetupGlobals::OnEnable()
+// 0x000000EE System.Void LuxURPEssentials.LuxURP_SetupGlobals::OnEnable()
 extern void LuxURP_SetupGlobals_OnEnable_m6CA875AF5B247556E2B9AF6DAC53A27E2FD15005 (void);
-// 0x000000EA System.Void LuxURPEssentials.LuxURP_SetupGlobals::OnValidate()
+// 0x000000EF System.Void LuxURPEssentials.LuxURP_SetupGlobals::OnValidate()
 extern void LuxURP_SetupGlobals_OnValidate_mE8BFA398C201C643686D1AFC4209F6FB048AC44E (void);
-// 0x000000EB System.Void LuxURPEssentials.LuxURP_SetupGlobals::.ctor()
+// 0x000000F0 System.Void LuxURPEssentials.LuxURP_SetupGlobals::.ctor()
 extern void LuxURP_SetupGlobals__ctor_mA71BCB802BC2E9F84D892CD97DE0742538CFB99B (void);
-// 0x000000EC System.Void LuxURPEssentials.LuxURP_Wind::OnEnable()
+// 0x000000F1 System.Void LuxURPEssentials.LuxURP_Wind::OnEnable()
 extern void LuxURP_Wind_OnEnable_m95DAA037CCF6548C8D70EC8051819B146D726EAE (void);
-// 0x000000ED System.Void LuxURPEssentials.LuxURP_Wind::OnDisable()
+// 0x000000F2 System.Void LuxURPEssentials.LuxURP_Wind::OnDisable()
 extern void LuxURP_Wind_OnDisable_m80345BA6ACC50B4CBFD853AD4472C8F612528190 (void);
-// 0x000000EE System.Void LuxURPEssentials.LuxURP_Wind::SetupRT()
+// 0x000000F3 System.Void LuxURPEssentials.LuxURP_Wind::SetupRT()
 extern void LuxURP_Wind_SetupRT_m3CC2B5A41BEEEB19AED04D6DF2BBC1EB5CE390FE (void);
-// 0x000000EF System.Void LuxURPEssentials.LuxURP_Wind::GetPIDs()
+// 0x000000F4 System.Void LuxURPEssentials.LuxURP_Wind::GetPIDs()
 extern void LuxURP_Wind_GetPIDs_m689D41136D037F188DDBFF655B7BF46E8BE3121C (void);
-// 0x000000F0 System.Void LuxURPEssentials.LuxURP_Wind::OnValidate()
+// 0x000000F5 System.Void LuxURPEssentials.LuxURP_Wind::OnValidate()
 extern void LuxURP_Wind_OnValidate_m3A8E2277DA7B0CC4877DE9378CD8099362D04B4D (void);
-// 0x000000F1 System.Void LuxURPEssentials.LuxURP_Wind::Update()
+// 0x000000F6 System.Void LuxURPEssentials.LuxURP_Wind::Update()
 extern void LuxURP_Wind_Update_m7E34FF47F17CBFADC239B4717F4FF4B0319CBED5 (void);
-// 0x000000F2 System.Void LuxURPEssentials.LuxURP_Wind::.ctor()
+// 0x000000F7 System.Void LuxURPEssentials.LuxURP_Wind::.ctor()
 extern void LuxURP_Wind__ctor_mE0636BABBD1824E581BA6FF3348A22602F736FB5 (void);
-// 0x000000F3 System.Void LuxURPEssentials.LuxURP_Wind::.cctor()
+// 0x000000F8 System.Void LuxURPEssentials.LuxURP_Wind::.cctor()
 extern void LuxURP_Wind__cctor_mEECF7E3C93FE826F5ED94DFAA8CA8A30457B85F6 (void);
-// 0x000000F4 System.Void LuxURPEssentials.GetTerrainHeightNormalMap::GetTerData()
+// 0x000000F9 System.Void LuxURPEssentials.GetTerrainHeightNormalMap::GetTerData()
 extern void GetTerrainHeightNormalMap_GetTerData_mCDA3646F3EC313F998C117FAD80684B59BD5AADA (void);
-// 0x000000F5 System.Void LuxURPEssentials.GetTerrainHeightNormalMap::.ctor()
+// 0x000000FA System.Void LuxURPEssentials.GetTerrainHeightNormalMap::.ctor()
 extern void GetTerrainHeightNormalMap__ctor_m62CCA32374C12344E80D78E9DDEE9F67815EE9DD (void);
-// 0x000000F6 System.Void LuxURPEssentials.Demo.AnimateSphere::Start()
+// 0x000000FB System.Void LuxURPEssentials.Demo.AnimateSphere::Start()
 extern void AnimateSphere_Start_m0037113B7BDA7D3AEFE72EBC72676C1D20BD0AF6 (void);
-// 0x000000F7 System.Void LuxURPEssentials.Demo.AnimateSphere::Update()
+// 0x000000FC System.Void LuxURPEssentials.Demo.AnimateSphere::Update()
 extern void AnimateSphere_Update_m1FF26F86707E886A8987973151DF38AE4C915B45 (void);
-// 0x000000F8 System.Void LuxURPEssentials.Demo.AnimateSphere::.ctor()
+// 0x000000FD System.Void LuxURPEssentials.Demo.AnimateSphere::.ctor()
 extern void AnimateSphere__ctor_mF105808CB0E6D878BCF65631A69576B145E0C790 (void);
-// 0x000000F9 System.Void LuxURPEssentials.Demo.CheckSettings::Start()
+// 0x000000FE System.Void LuxURPEssentials.Demo.CheckSettings::Start()
 extern void CheckSettings_Start_m01AEE4032960896517A7D8C49F6B8493CC2933AD (void);
-// 0x000000FA System.Void LuxURPEssentials.Demo.CheckSettings::.ctor()
+// 0x000000FF System.Void LuxURPEssentials.Demo.CheckSettings::.ctor()
 extern void CheckSettings__ctor_m08C9B08517B4921AEF6968F2583BEF4A53509EF9 (void);
-// 0x000000FB System.Void LuxURPEssentials.Demo.ExtendedFlycam::Start()
+// 0x00000100 System.Void LuxURPEssentials.Demo.ExtendedFlycam::Start()
 extern void ExtendedFlycam_Start_mAB2A7795DC3BB5FF11F80114573F5A2FE58E1CA6 (void);
-// 0x000000FC System.Void LuxURPEssentials.Demo.ExtendedFlycam::Update()
+// 0x00000101 System.Void LuxURPEssentials.Demo.ExtendedFlycam::Update()
 extern void ExtendedFlycam_Update_m9108D7D87CB903C928E1B0070CBACFA02ADB2D9C (void);
-// 0x000000FD System.Void LuxURPEssentials.Demo.ExtendedFlycam::.ctor()
+// 0x00000102 System.Void LuxURPEssentials.Demo.ExtendedFlycam::.ctor()
 extern void ExtendedFlycam__ctor_mCCF379BE87BAFF70F2713478394DE694A82F7AEE (void);
-// 0x000000FE System.Void LuxURPEssentials.Demo.MouseSelect::Update()
+// 0x00000103 System.Void LuxURPEssentials.Demo.MouseSelect::Update()
 extern void MouseSelect_Update_m6AD3AA17C81D471BABF607D7F154A524658710E6 (void);
-// 0x000000FF System.Void LuxURPEssentials.Demo.MouseSelect::.ctor()
+// 0x00000104 System.Void LuxURPEssentials.Demo.MouseSelect::.ctor()
 extern void MouseSelect__ctor_mAB8B83D71669B0F816E84EC5949F4BBA1D4D0077 (void);
-// 0x00000100 System.Void LuxURPEssentials.Demo.ToggleOutlineSelection::OnEnable()
+// 0x00000105 System.Void LuxURPEssentials.Demo.ToggleOutlineSelection::OnEnable()
 extern void ToggleOutlineSelection_OnEnable_m93D51CAC6401808013667E1CB64D6C1BFD01C2F8 (void);
-// 0x00000101 System.Void LuxURPEssentials.Demo.ToggleOutlineSelection::Select()
+// 0x00000106 System.Void LuxURPEssentials.Demo.ToggleOutlineSelection::Select()
 extern void ToggleOutlineSelection_Select_m7987DE95DBFF367AFB5672F58F09B0D363128B0F (void);
-// 0x00000102 System.Void LuxURPEssentials.Demo.ToggleOutlineSelection::.ctor()
+// 0x00000107 System.Void LuxURPEssentials.Demo.ToggleOutlineSelection::.ctor()
 extern void ToggleOutlineSelection__ctor_m0F7C22557321A6588E89D2DAB93F31D05514959F (void);
-// 0x00000103 System.UInt32 <PrivateImplementationDetails>::ComputeStringHash(System.String)
+// 0x00000108 System.UInt32 <PrivateImplementationDetails>::ComputeStringHash(System.String)
 extern void U3CPrivateImplementationDetailsU3E_ComputeStringHash_m6EA1F233618497AEFF8902A5EDFA24C74E2F2876 (void);
-static Il2CppMethodPointer s_methodPointers[259] = 
+static Il2CppMethodPointer s_methodPointers[264] = 
 {
 	DMXChannel__ctor_m90073A0BBF44E1E36B52ABCF207878E2491C5B99,
 	DMXController_Awake_m1D3FD00DB2047B378FC53E4A984D0CF49BA5E58D,
@@ -709,6 +719,11 @@ static Il2CppMethodPointer s_methodPointers[259] =
 	updateMyColor_Start_m797DD0721C8486B824F31096F5828A4D2EFB849B,
 	updateMyColor_Update_mFC9439A0565A5C20065E9F4E08C19C1D47A8EAFB,
 	updateMyColor__ctor_m522CE08644DB506E2884309DB0FED9B7906C25A5,
+	XRCameraMovement_Start_m90314ED840E01247009A1681A70B35CB2EE8AC5E,
+	XRCameraMovement_Update_mB25912D8E0290F894CEAA0B9D4D043B5B53FEE5C,
+	XRCameraMovement_MovePlayer_mF7BA71336704A66D6052C2C2C99263319C1C31CD,
+	XRCameraMovement_RotatePlayer_m7243F97A19CC5AF624AAC6BDF3415924A0765922,
+	XRCameraMovement__ctor_mE0B34D3682A374C307BE18C064EBBEE62A7E8B40,
 	ShowLaserEffect_Start_m11317C3E306D136D31D6BA77950A31CFAE225504,
 	ShowLaserEffect_OnValidate_m33B5C38385A432EC68245D09014FF661E0F5FE79,
 	ShowLaserEffect_Update_mF1D7E037F8186DF935F8F3A642788ED4062CCB92,
@@ -792,273 +807,278 @@ static Il2CppMethodPointer s_methodPointers[259] =
 	ToggleOutlineSelection__ctor_m0F7C22557321A6588E89D2DAB93F31D05514959F,
 	U3CPrivateImplementationDetailsU3E_ComputeStringHash_m6EA1F233618497AEFF8902A5EDFA24C74E2F2876,
 };
-static const int32_t s_InvokerIndices[259] = 
+static const int32_t s_InvokerIndices[264] = 
 {
-	6204,
-	6204,
-	6204,
-	2694,
-	6060,
-	4591,
-	6204,
-	6204,
-	3644,
-	6204,
-	3644,
-	10563,
-	10563,
-	9182,
-	6204,
-	6204,
-	6204,
-	5051,
-	6204,
-	6204,
-	2694,
-	2891,
-	6204,
-	6204,
-	3644,
-	6204,
-	6204,
-	6204,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	6087,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	6204,
-	6204,
-	6204,
-	2694,
-	2891,
-	6204,
-	4971,
-	6204,
-	5999,
-	6087,
-	6204,
-	6087,
-	6204,
-	3644,
-	6204,
-	6204,
-	6204,
-	6204,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	6087,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	5051,
-	6204,
-	6204,
-	6204,
-	2694,
-	2891,
-	6204,
-	4971,
-	6204,
-	5999,
-	6087,
-	6204,
-	6087,
-	6204,
-	3644,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6087,
-	6204,
-	6204,
-	4971,
-	6204,
-	5999,
-	6087,
-	6204,
-	6087,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	2864,
-	6204,
-	6120,
-	5029,
-	6119,
-	5028,
-	2919,
-	2927,
-	4997,
-	6204,
+	6213,
+	6213,
+	6213,
+	2696,
+	6069,
+	4600,
+	6213,
+	6213,
+	3653,
+	6213,
+	3653,
+	10574,
+	10574,
+	9192,
+	6213,
+	6213,
+	6213,
+	5060,
+	6213,
+	6213,
+	2696,
+	2893,
+	6213,
+	6213,
+	3653,
+	6213,
+	6213,
+	6213,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	6096,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	6213,
+	6213,
+	6213,
+	2696,
+	2893,
+	6213,
+	4980,
+	6213,
+	6008,
+	6096,
+	6213,
+	6096,
+	6213,
+	3653,
+	6213,
+	6213,
+	6213,
+	6213,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	6096,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	5060,
+	6213,
+	6213,
+	6213,
+	2696,
+	2893,
+	6213,
+	4980,
+	6213,
+	6008,
+	6096,
+	6213,
+	6096,
+	6213,
+	3653,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6096,
+	6213,
+	6213,
+	4980,
+	6213,
+	6008,
+	6096,
+	6213,
+	6096,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	2866,
+	6213,
+	6129,
+	5038,
+	6128,
+	5037,
+	2921,
+	2929,
+	5006,
+	6213,
 	1577,
-	2889,
-	2927,
+	2891,
+	2929,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6202,
 	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6193,
-	6195,
-	6204,
-	2883,
-	6204,
+	6213,
+	2885,
+	6213,
 	1564,
-	6204,
-	6204,
-	6204,
-	6204,
-	4500,
-	6087,
-	6204,
-	4971,
-	6204,
-	5999,
-	6087,
-	6204,
-	6087,
-	4971,
-	6204,
-	5999,
-	6087,
-	6204,
-	6087,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6144,
-	6144,
-	6144,
-	4505,
+	6213,
+	6213,
+	6213,
+	6213,
+	4509,
+	6096,
+	6213,
+	4980,
+	6213,
+	6008,
+	6096,
+	6213,
+	6096,
+	4980,
+	6213,
+	6008,
+	6096,
+	6213,
+	6096,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6153,
+	6153,
+	6153,
+	4514,
 	1366,
 	1366,
 	490,
-	6087,
-	5999,
-	5999,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	2864,
-	6204,
-	6204,
-	6033,
-	4948,
-	6204,
-	2889,
-	2927,
-	4997,
-	11398,
-	6204,
-	6204,
-	6204,
-	11398,
-	6204,
-	6204,
-	6204,
-	6204,
-	4997,
-	4241,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	11398,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	6204,
-	10439,
+	6096,
+	6008,
+	6008,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	2866,
+	6213,
+	6213,
+	6042,
+	4957,
+	6213,
+	2891,
+	2929,
+	5006,
+	11409,
+	6213,
+	6213,
+	6213,
+	11409,
+	6213,
+	6213,
+	6213,
+	6213,
+	5006,
+	4250,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	11409,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	6213,
+	10450,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	259,
+	264,
 	s_methodPointers,
 	0,
 	NULL,
