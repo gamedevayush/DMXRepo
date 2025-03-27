@@ -19,7 +19,7 @@ public class ParticlesAudio : MonoBehaviour
         particles = GetComponent<ParticleSystem>();
     }
 
-    void OnDrawGizmos()
+    void Update()
     {
         if (particles.isEmitting && !aud.isPlaying)
         {

@@ -14,7 +14,7 @@ public class StrobeLightEditor : Editor
 
         if (GUILayout.Button("Apply Effect"))
         {
-            manager.SetEffect(selectedEffect);
+            //manager.SetEffect(selectedEffect);
         }
     }
 }

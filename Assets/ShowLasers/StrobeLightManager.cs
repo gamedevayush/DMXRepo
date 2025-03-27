@@ -21,10 +21,15 @@ public class StrobeLightManager : MonoBehaviour
         ApplyEffect();
     }
 
-    public void SetEffect(int index)
+    public void BlackOut()
     {
-        effectIndex = index;
         StopAllCoroutines();
+        foreach (GameObject lightObj in emissiveObjects)
+        {
+            Strobe(lightObj, Color.black); // Reset to primary color
+        }
+        Debug.Log("All Stopped");
+        ApplyEffect();
     }
 
     private void ApplyEffect()
