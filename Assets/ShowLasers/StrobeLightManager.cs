@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -33,9 +33,10 @@ public class StrobeLightManager : MonoBehaviour
         {
             case 1: StartCoroutine(RandomStrobe()); break;
             case 2: StartCoroutine(EvenOddBlink()); break;
-             case 3: StartCoroutine(FadeWaveEffect()); break;
-             /*case 4: StartCoroutine(InvertOneByOne()); break;
-            case 5: AllOn(); break;*/
+            case 3: StartCoroutine(MultiTrailWaveEffect()); break;
+            case 4: StartCoroutine(PulseSurge()); break;
+            case 5: StartCoroutine(FadeWaveEffect()); break;
+            case 6: StartCoroutine(ReverseFadeWaveEffect()); break;
             default: break;
         }
     }
@@ -116,9 +117,121 @@ public class StrobeLightManager : MonoBehaviour
 
     #endregion
 
+    #region BubblesEffect
+    private IEnumerator MultiTrailWaveEffect()
+    {
+        int waveLength = 15;  // Length of each wave
+        int totalWaves = 5;   // Number of waves running together
+        int waveSpacing = 3;  // Gap between trails
+
+        for (int step = 0; step < waveLength * 2; step++) // Moves forward & backward
+        {
+            for (int w = 0; w < totalWaves; w++) // 5 Waves running at a time
+            {
+                int waveOffset = w * 3; // Offset each wave to spread them
+
+                for (int i = 0; i < waveLength; i += 2) // 1-2-1-2 pattern
+                {
+                    int leftIndex = i + waveOffset;
+                    int rightIndex = 30 - leftIndex;
+
+                    if (leftIndex >= waveLength || rightIndex < 0) continue; // Prevents out-of-bounds
+
+                    // Wave color logic
+                    Color waveColor = useSecondColor ? secondaryColor : Color.black;
+
+                    // Smooth fade effect
+                    float fadeIntensity = Mathf.Sin((step - i) * Mathf.PI / waveLength);
+                    fadeIntensity = Mathf.Clamp01(fadeIntensity);
+
+                    Color currentColor = Color.Lerp(emissiveColor, waveColor, fadeIntensity);
+
+                    Strobe(emissiveObjects[leftIndex], currentColor);
+                    Strobe(emissiveObjects[rightIndex], currentColor);
+
+                    // Creating the "2" part of 1-2-1-2 pattern
+                    if (leftIndex + 1 < waveLength)
+                    {
+                        int nextLeft = leftIndex + 1;
+                        int nextRight = rightIndex - 1;
+
+                        float fadeIntensityNext = Mathf.Sin((step - nextLeft - waveSpacing) * Mathf.PI / waveLength);
+                        fadeIntensityNext = Mathf.Clamp01(fadeIntensityNext);
+
+                        Color nextColor = Color.Lerp(emissiveColor, waveColor, fadeIntensityNext);
+
+                        Strobe(emissiveObjects[nextLeft], nextColor);
+                        Strobe(emissiveObjects[nextRight], nextColor);
+                    }
+                }
+            }
+
+            yield return new WaitForSeconds(strobeDuration);
+        }
+
+        // Fade back to normal
+        for (int i = 0; i < waveLength; i++)
+        {
+            int leftIndex = i;
+            int rightIndex = 30 - i;
+            Strobe(emissiveObjects[leftIndex], emissiveColor);
+            Strobe(emissiveObjects[rightIndex], emissiveColor);
+        }
+
+        yield return new WaitForSeconds(strobeDuration);
+
+        ApplyEffect();
+    }
+
+    #endregion
+
+    #region PulseSurge
+    private IEnumerator PulseSurge()
+    {
+        int waveLength = 15;
+        for (int step = 0; step < waveLength * 2; step++)
+        {
+            float intensity = Mathf.Abs(Mathf.Sin(step * Mathf.PI / waveLength)); // Pulsating effect
+
+            for (int i = 0; i < waveLength; i++)
+            {
+                int leftIndex = i;
+                int rightIndex = 30 - i;
+
+                Color waveColor = useSecondColor ? secondaryColor : Color.black;
+                Color currentColor = Color.Lerp(emissiveColor, waveColor, intensity);
+
+                Strobe(emissiveObjects[leftIndex], currentColor);
+                Strobe(emissiveObjects[rightIndex], currentColor);
+            }
+
+            yield return new WaitForSeconds(strobeDuration * 0.8f);
+        }
+        ApplyEffect();
+    }
+    #endregion
+
+    #region ChaosBlink
+    private IEnumerator ChaosBlink()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            int randomIndex = Random.Range(0, emissiveObjects.Length);
+            Color randomColor = useSecondColor ? (Random.value > 0.5f ? secondaryColor : emissiveColor) : emissiveColor;
+
+            Strobe(emissiveObjects[randomIndex], randomColor);
+
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.2f)); // Random delay for chaos
+            Strobe(emissiveObjects[randomIndex], Color.black);
+        }
+        ApplyEffect();
+    }
+    #endregion
+
+    #region FadeIn
     private IEnumerator FadeWaveEffect()
     {
-        int waveLength = 15; // Wave moves across 15 steps
+        int waveLength = 16; // Wave moves across 15 steps
 
         for (int step = 0; step < waveLength * 2; step++) // Covers both forward & backward motion
         {
@@ -157,41 +270,57 @@ public class StrobeLightManager : MonoBehaviour
     }
 
 
-    /*private IEnumerator OneByOneBlink()
-        {
-            for (int i = 0; i < 15; i++)
-            {
-                yield return Strobe(emissiveObjects[i], emissiveColor);
-                yield return Strobe(emissiveObjects[i + 35], emissiveColor);
-            }
-            for (int i = 15; i <= 34; i++)
-            {
-                yield return Strobe(emissiveObjects[i], emissiveColor);
-            }
-        }
 
-        private IEnumerator InvertOneByOne()
-        {
-            for (int i = 14; i >= 0; i--)
-            {
-                yield return Strobe(emissiveObjects[i], secondaryColor);
-                yield return Strobe(emissiveObjects[i + 35], secondaryColor);
-            }
-            for (int i = 34; i >= 15; i--)
-            {
-                yield return Strobe(emissiveObjects[i], secondaryColor);
-            }
-        }
 
-    private void AllOn()
+
+
+
+
+    #endregion
+
+    #region FadeOut
+    private IEnumerator ReverseFadeWaveEffect()
     {
-        foreach (GameObject obj in emissiveObjects)
+        int waveLength = 16; // Wave moves across 15 steps
+
+        for (int step = waveLength * 2; step >= 0; step--) // Covers reverse motion
         {
-            Light light = obj.transform.GetChild(0).GetChild(0).GetComponent<Light>();
-            light.enabled = true;
-            light.color = emissiveColor;
+            for (int i = 0; i < waveLength; i++)
+            {
+                int leftIndex = i;          // Left side (0 to 14)
+                int rightIndex = 30 - i;    // Right side (30 to 15)
+
+                // Determine wave color (secondary if enabled, else black)
+                Color waveColor = useSecondColor ? secondaryColor : Color.black;
+
+                // Create a smooth fade wave that moves inward & outward in reverse
+                float fadeIntensity = Mathf.Sin((step - i) * Mathf.PI / waveLength);
+                fadeIntensity = Mathf.Clamp01(fadeIntensity); // Ensure values stay between 0 and 1
+                Color currentColor = Color.Lerp(emissiveColor, waveColor, fadeIntensity);
+
+                Strobe(emissiveObjects[leftIndex], currentColor);
+                Strobe(emissiveObjects[rightIndex], currentColor);
+            }
+
+            yield return new WaitForSeconds(strobeDuration);
         }
-    }*/
+
+        // Fade back to primary color
+        for (int i = 0; i < waveLength; i++)
+        {
+            int leftIndex = i;
+            int rightIndex = 30 - i;
+            Strobe(emissiveObjects[leftIndex], emissiveColor);
+            Strobe(emissiveObjects[rightIndex], emissiveColor);
+        }
+
+        yield return new WaitForSeconds(strobeDuration);
+
+        ApplyEffect();
+    }
+
+    #endregion
+
 
     private void Strobe(GameObject GO, Color color)
     {
